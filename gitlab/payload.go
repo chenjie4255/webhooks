@@ -110,6 +110,7 @@ type PipelineEventPayload struct {
 	Commit           Commit           `json:"commit"`
 	ObjectAttributes ObjectAttributes `json:"object_attributes"`
 	Jobs             []Job            `json:"jobs"`
+	Builds           []Job            `json:"builds"`
 }
 
 // CommentEventPayload contains the information for GitLab's comment event
