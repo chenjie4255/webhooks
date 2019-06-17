@@ -33,6 +33,7 @@ const (
 	PipelineEvents           Event = "Pipeline Hook"
 	BuildEvents              Event = "Build Hook"
 	JobEvents                Event = "Job Hook"
+	//JobBuildEvent            Event = "Job Hook" // due to Gitlab's bug, build event was send with job Hook
 	SystemHookEvents         Event = "System Hook"
 
 	objectPush         string = "push"
@@ -168,14 +169,14 @@ func eventParsing(gitLabEvent Event, events []Event, payload []byte) (interface{
 		err := json.Unmarshal([]byte(payload), &pl)
 		return pl, err
 
-	case BuildEvents:
+	case BuildEvents, JobEvents:
 		var pl BuildEventPayload
 		err := json.Unmarshal([]byte(payload), &pl)
 		return pl, err
-	case JobEvents:
-		var p1 JobEventPayload
-		err := json.Unmarshal([]byte(payload), &p1)
-		return p1, err
+	//case JobEvents:
+	//	var p1 JobEventPayload
+	//	err := json.Unmarshal([]byte(payload), &p1)
+	//	return p1, err
 
 	case SystemHookEvents:
 		var pl SystemHookPayload

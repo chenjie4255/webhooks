@@ -139,7 +139,7 @@ type BuildEventPayload struct {
 	BuildStatus       string      `json:"build_status"`
 	BuildStartedAt    customTime  `json:"build_started_at"`
 	BuildFinishedAt   customTime  `json:"build_finished_at"`
-	BuildDuration     int64       `json:"build_duration"`
+	BuildDuration     float64     `json:"build_duration"`
 	BuildAllowFailure bool        `json:"build_allow_failure"`
 	ProjectID         int64       `json:"project_id"`
 	ProjectName       string      `json:"project_name"`
@@ -274,9 +274,11 @@ type Snippet struct {
 
 // User contains all of the GitLab user information
 type User struct {
+	ID        int    `json:"id"`
 	Name      string `json:"name"`
 	UserName  string `json:"username"`
 	AvatarURL string `json:"avatar_url"`
+	Email     string `json:"email"`
 }
 
 // Project contains all of the GitLab project information
