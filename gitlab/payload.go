@@ -284,6 +284,7 @@ type User struct {
 
 // Project contains all of the GitLab project information
 type Project struct {
+	ID                int    `json:"id"`
 	Name              string `json:"name"`
 	Description       string `json:"description"`
 	WebURL            string `json:"web_url"`
@@ -312,7 +313,7 @@ type Repository struct {
 type ObjectAttributes struct {
 	ID              int64      `json:"id"`
 	Title           string     `json:"title"`
-	AssigneeID      int64      `json:"assignee_id"`
+	AssigneeID      int64      `json:"assignee_id,omitempty"`
 	AuthorID        int64      `json:"author_id"`
 	ProjectID       int64      `json:"project_id"`
 	CreatedAt       customTime `json:"created_at"`

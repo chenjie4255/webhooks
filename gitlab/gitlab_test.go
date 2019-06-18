@@ -151,6 +151,15 @@ func TestWebhooks(t *testing.T) {
 			},
 		},
 		{
+			name:     "IssueEvent2",
+			event:    IssuesEvents,
+			typ:      IssueEventPayload{},
+			filename: "../testdata/gitlab/issue-event2.json",
+			headers: http.Header{
+				"X-Gitlab-Event": []string{"Issue Hook"},
+			},
+		},
+		{
 			name:     "ConfidentialIssueEvent",
 			event:    ConfidentialIssuesEvents,
 			typ:      ConfidentialIssueEventPayload{},
@@ -231,15 +240,15 @@ func TestWebhooks(t *testing.T) {
 				"X-Gitlab-Event": []string{"Build Hook"},
 			},
 		},
-		{
-			name:     "JobEvent",
-			event:    JobEvents,
-			typ:      JobEventPayload{},
-			filename: "../testdata/gitlab/job-event.json",
-			headers: http.Header{
-				"X-Gitlab-Event": []string{"Job Hook"},
-			},
-		},
+		//{
+		//	name:     "JobEvent",
+		//	event:    JobEvents,
+		//	typ:      JobEventPayload{},
+		//	filename: "../testdata/gitlab/job-event.json",
+		//	headers: http.Header{
+		//		"X-Gitlab-Event": []string{"Job Hook"},
+		//	},
+		//},
 	}
 
 	for _, tt := range tests {
