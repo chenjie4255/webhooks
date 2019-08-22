@@ -38,6 +38,7 @@ type IssueEventPayload struct {
 	Repository       Repository       `json:"repository"`
 	ObjectAttributes ObjectAttributes `json:"object_attributes"`
 	Assignee         Assignee         `json:"assignee"`
+	Assignees        []Assignee       `json:"assignees"`
 	Changes          Changes          `json:"changes"`
 }
 
@@ -456,9 +457,9 @@ type Author struct {
 
 // Changes contains all changes associated with a GitLab issue or MR
 type Changes struct {
-	LabelChanges LabelChanges `json:"labels"`
-	Assignees AssigneesChanges `json:"assignees"`
-	DueDate DueDateChanges `json:"due_date"`
+	LabelChanges LabelChanges     `json:"labels"`
+	Assignees    AssigneesChanges `json:"assignees"`
+	DueDate      DueDateChanges   `json:"due_date"`
 }
 
 type DueDateChanges struct {
