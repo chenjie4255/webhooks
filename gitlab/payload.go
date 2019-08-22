@@ -458,6 +458,12 @@ type Author struct {
 type Changes struct {
 	LabelChanges LabelChanges `json:"labels"`
 	Assignees AssigneesChanges `json:"assignees"`
+	DueDate DueDateChanges `json:"due_date"`
+}
+
+type DueDateChanges struct {
+	Previous string `json:"previous,omitempty"`
+	Current  string `json:"current,omitempty"`
 }
 
 type AssigneesChanges struct {
