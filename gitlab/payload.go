@@ -353,10 +353,10 @@ type ObjectAttributes struct {
 	System          bool       `json:"system"`
 	WorkInProgress  bool       `json:"work_in_progress"`
 	StDiffs         []StDiff   `json:"st_diffs"`
-	Source          Source     `json:"source"`
-	Target          Target     `json:"target"`
-	LastCommit      LastCommit `json:"last_commit"`
-	Assignee        Assignee   `json:"assignee"`
+	// Source          Source     `json:"-"`
+	Target     Target     `json:"target"`
+	LastCommit LastCommit `json:"last_commit"`
+	Assignee   Assignee   `json:"assignee"`
 }
 
 // MergeRequest contains all of the GitLab merge request information
