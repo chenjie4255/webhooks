@@ -183,6 +183,7 @@ type Issue struct {
 	ID          int64      `json:"id"`
 	Title       string     `json:"title"`
 	AssigneeID  int64      `json:"assignee_id"`
+	AssigneeIDs []int64    `json:"assignee_ids,omitempty"`
 	AuthorID    int64      `json:"author_id"`
 	ProjectID   int64      `json:"project_id"`
 	CreatedAt   customTime `json:"created_at"`
@@ -315,6 +316,7 @@ type ObjectAttributes struct {
 	ID              int64      `json:"id"`
 	Title           string     `json:"title"`
 	AssigneeID      int64      `json:"assignee_id,omitempty"`
+	AssigneeIDs     []int64    `json:"assignee_ids,omitempty"`
 	AuthorID        int64      `json:"author_id"`
 	ProjectID       int64      `json:"project_id"`
 	CreatedAt       customTime `json:"created_at"`
@@ -366,6 +368,7 @@ type MergeRequest struct {
 	SourceBranch    string     `json:"source_branch"`
 	SourceProjectID int64      `json:"source_project_id"`
 	AssigneeID      int64      `json:"assignee_id"`
+	AssigneeIDs     []int64    `json:"assignee_ids,omitempty"`
 	AuthorID        int64      `json:"author_id"`
 	Title           string     `json:"title"`
 	CreatedAt       customTime `json:"created_at"`
