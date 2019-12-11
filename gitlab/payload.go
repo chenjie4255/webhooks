@@ -188,12 +188,12 @@ type Issue struct {
 	ProjectID   int64      `json:"project_id"`
 	CreatedAt   customTime `json:"created_at"`
 	UpdatedAt   customTime `json:"updated_at"`
-	Position    int64      `json:"position"`
-	BranchName  string     `json:"branch_name"`
-	Description string     `json:"description"`
-	MilestoneID int64      `json:"milestone_id"`
-	State       string     `json:"state"`
-	IID         int64      `json:"iid"`
+	// Position    int64      `json:"position"`
+	BranchName  string `json:"branch_name"`
+	Description string `json:"description"`
+	MilestoneID int64  `json:"milestone_id"`
+	State       string `json:"state"`
+	IID         int64  `json:"iid"`
 }
 
 // Job contains all of the GitLab job information
@@ -313,15 +313,15 @@ type Repository struct {
 
 // ObjectAttributes contains all of the GitLab object attributes information
 type ObjectAttributes struct {
-	ID              int64      `json:"id"`
-	Title           string     `json:"title"`
-	AssigneeID      int64      `json:"assignee_id,omitempty"`
-	AssigneeIDs     []int64    `json:"assignee_ids,omitempty"`
-	AuthorID        int64      `json:"author_id"`
-	ProjectID       int64      `json:"project_id"`
-	CreatedAt       customTime `json:"created_at"`
-	UpdatedAt       customTime `json:"updated_at"`
-	Position        int64      `json:"position"`
+	ID          int64      `json:"id"`
+	Title       string     `json:"title"`
+	AssigneeID  int64      `json:"assignee_id,omitempty"`
+	AssigneeIDs []int64    `json:"assignee_ids,omitempty"`
+	AuthorID    int64      `json:"author_id"`
+	ProjectID   int64      `json:"project_id"`
+	CreatedAt   customTime `json:"created_at"`
+	UpdatedAt   customTime `json:"updated_at"`
+	// Position        int64      `json:"position"`
 	BranchName      string     `json:"branch_name"`
 	Description     string     `json:"description"`
 	MilestoneID     int64      `json:"milestone_id"`
