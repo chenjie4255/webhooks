@@ -359,6 +359,7 @@ type ObjectAttributes struct {
 	Target     Target     `json:"target"`
 	LastCommit LastCommit `json:"last_commit"`
 	Assignee   Assignee   `json:"assignee"`
+	Labels     []Label    `json:"labels,omitempty"`
 }
 
 // MergeRequest contains all of the GitLab merge request information
@@ -486,11 +487,11 @@ type Label struct {
 	ID          int64      `json:"id"`
 	Title       string     `json:"title"`
 	Color       string     `json:"color"`
-	ProjectID   int64      `json:"project_id"`
+	ProjectID   int64      `json:"project_id,omitempty"`
 	CreatedAt   customTime `json:"created_at"`
 	UpdatedAt   customTime `json:"updated_at"`
 	Template    bool       `json:"template"`
 	Description string     `json:"description"`
 	Type        string     `json:"type"`
-	GroupID     int64      `json:"group_id"`
+	GroupID     int64      `json:"group_id,omitempty"`
 }
