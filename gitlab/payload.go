@@ -313,14 +313,15 @@ type Repository struct {
 
 // ObjectAttributes contains all of the GitLab object attributes information
 type ObjectAttributes struct {
-	ID          int64      `json:"id"`
-	Title       string     `json:"title"`
-	AssigneeID  int64      `json:"assignee_id,omitempty"`
-	AssigneeIDs []int64    `json:"assignee_ids,omitempty"`
-	AuthorID    int64      `json:"author_id"`
-	ProjectID   int64      `json:"project_id"`
-	CreatedAt   customTime `json:"created_at"`
-	UpdatedAt   customTime `json:"updated_at"`
+	ID           int64      `json:"id"`
+	Title        string     `json:"title"`
+	AssigneeID   int64      `json:"assignee_id,omitempty"`
+	AssigneeIDs  []int64    `json:"assignee_ids,omitempty"`
+	AuthorID     int64      `json:"author_id"`
+	ProjectID    int64      `json:"project_id"`
+	CreatedAt    customTime `json:"created_at"`
+	UpdatedAt    customTime `json:"updated_at"`
+	DiscussionID string     `json:"discussion_id"`
 	// Position        int64      `json:"position"`
 	BranchName      string     `json:"branch_name"`
 	Description     string     `json:"description"`
